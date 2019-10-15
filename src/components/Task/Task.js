@@ -30,12 +30,14 @@ export default function Task({
         />
         <span className="checkbox-custom" onClick={() => onArchiveTask(id)} />
       </label>
+
       <div className="title">
         <input
           type="text"
           value={title}
           readOnly={true}
           placeholder="Input title"
+          style={{ textOverflow: "ellipsis" }}
         />
       </div>
 
@@ -44,6 +46,8 @@ export default function Task({
           <a onClick={() => onPinTask(id)}>
             <span className={`icon-star`} />
           </a>
+          // https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/anchor-is-valid.md
+          // <button onClick={() => onPinTask(id)}>{`icon-star`}</button>
         )}
       </div>
     </div>
